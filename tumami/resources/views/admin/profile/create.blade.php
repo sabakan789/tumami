@@ -23,13 +23,13 @@
                 <div class="form-group row">
                     <label class="col-md-2" for="body">自己紹介</label>
                     <div class="col-md-10">
-                        <textarea class="form-control" name="profile" rows="10">{{ old('introduction') }}</textarea>
+                        <textarea class="form-control" name="profile" rows="10">{{ old('profile') }}</textarea>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-md-2" for="title">プロフィール画像</label>
                     <div class="col-md-10">
-                        <input type="file" class="form-control-file" name="image">
+                        <input type="file" class="form-control-file" name="userimage">
                     </div>
                 </div>
                 {{ csrf_field() }}

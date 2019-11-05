@@ -146,6 +146,8 @@ return [
     |
     */
 
-    'attributes' => [],
-
+    'attributes' => [
+        'nickname' => 'ニックネーム',
+        'profile' => '自己紹介'
+    ],
 ];
