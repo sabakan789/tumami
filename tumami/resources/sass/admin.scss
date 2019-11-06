@@ -1,8 +1,8 @@
 body {
     background-repeat: no-repeat;
     background-position: center;
-    background-color: rgb(173, 123, 82);
-    color: #fff;
+    background-color: #fff(173, 123, 82);
+    color: #000;
 }
 
 .navbar-laravel {
@@ -32,9 +32,13 @@ body {
 }
 
 .login-header {
-    background-color: rgba(0, 0, 0, 0.25)
+    background-color: rgba(0, 0, 0, 0.25);
 }
 
 .login-body {
     background-color: rgba(0, 0, 0, 0.25);
+}
+
+.index {
+    padding-top: 50px;
 }
