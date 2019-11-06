@@ -5,8 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Profile;
-use App\Change;
-use Carbon\Carbon;
 class ProfileController extends Controller
 {
     public function add()
@@ -36,11 +34,6 @@ class ProfileController extends Controller
         $profile = Profile::find($request->id);
         $profile_form = $request->all();
         $profile->fill($profile_form)->save();
-
-        $change = new History;
-        $change->news_id = $news->id;
-        $change->edited_at = Carbon::now();
-        $change->save();
         return view('admin.profile.edit');
     }
 }

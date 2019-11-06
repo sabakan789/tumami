@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProfileTable extends Migration
+class CreateTasksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateProfileTable extends Migration
      */
     public function up()
     {
-        Schema::create('profile', function (Blueprint $table) {
-            $table->integer('user_id');
-            $table->string('nickname');
-            $table->string('profile');
-            $table->string('userimage_path')->nullable();
+        Schema::create('tasks', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->string('title');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateProfileTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('profile');
+        Schema::dropIfExists('tasks');
     }
 }
