@@ -9,8 +9,10 @@ class TaskController extends Controller
 {
     public function index(Request $request)
     {
-        $tasks = Task::all();
-        return view('admin/tasks/index', ['tasks' => $tasks]);
+        $user = \Auth::user();
+        $user_id = $user->id;
+        $tasks = Task::where('user_id', $user_id)->get();
+        return view('admin/tasks/index', ['tasks' => $tasks, 'user_id' => $user_id]);
     }
 
     public function create(Request $request)
@@ -21,9 +23,9 @@ class TaskController extends Controller
         $user = \Auth::user();
         $task->user_id = $user->id;
         $task->save();
-
         return redirect('admin/tasks/index');
     }
+
     public function delete(Request $request)
     {
         $task = Task::find($request->id);

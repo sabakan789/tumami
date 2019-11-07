@@ -18,6 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/map', 'MapController@index');
+
 
 Route::group(['prefix' => 'admin'], function () {
     Route::get('profile/create', 'Admin\ProfileController@add')->middleware('auth');
