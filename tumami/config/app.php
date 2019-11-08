@@ -123,6 +123,8 @@ return [
 
     'cipher' => 'AES-256-CBC',
 
+    'map' => env('GOOGLE_MAP_API_KEY'),
+
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers
@@ -165,7 +167,7 @@ return [
         /*
          * Package Service Providers...
          */
-
+        Laravel\Socialite\SocialiteServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -219,6 +221,7 @@ return [
         'Response' => Illuminate\Support\Facades\Response::class,
         'Route' => Illuminate\Support\Facades\Route::class,
         'Schema' => Illuminate\Support\Facades\Schema::class,
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
         'Session' => Illuminate\Support\Facades\Session::class,
         'Storage' => Illuminate\Support\Facades\Storage::class,
         'Str' => Illuminate\Support\Str::class,
@@ -228,6 +231,5 @@ return [
 
     ],
 
-    'map' => env('GOOGLE_MAP_API_KEY'),
 
 ];
