@@ -27,6 +27,15 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('profile/edit', 'Admin\ProfileController@edit')->middleware('auth');
     Route::post('profile/edit', 'Admin\ProfileController@update')->middleware('auth');
     Route::get('tasks/index', 'Admin\TaskController@index')->middleware('auth');
+    Route::get('tumami/index', 'Admin\TumamiController@index')->middleware('auth');
     Route::post('tasks/create', 'Admin\TaskController@create')->middleware('auth');
     Route::get('tasks/delete', 'Admin\TaskController@delete')->middleware('auth');
+    Route::post('tumami/create', 'Admin\TumamiController@create');
+    Route::get('tumami/edit', 'Admin\TumamiController@edit')->middleware('auth');
+    Route::post('tumami/edit', 'Admin\TumamiController@update')->middleware('auth');
+    Route::get('tumami/create', 'Admin\TumamiController@add')->middleware('auth');
+    Route::get('tumami/show', 'Admin\TumamiController@show')->middleware('auth');
+    Route::get('tumami/delete', 'Admin\TumamiController@delete')->middleware('auth');
 });
+
+Route::get('/', 'TumamiController@index');

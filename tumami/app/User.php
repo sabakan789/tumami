@@ -46,4 +46,9 @@ class User extends Authenticatable
     {
         return $this->hasOne('App\Models\Profile');
     }
+
+    public function tumami()
+    {
+        return $this->hasMany('App\Models\Tumami');
+    }
 }
