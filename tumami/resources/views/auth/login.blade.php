@@ -22,9 +22,6 @@
                                     <strong>{{ $message }}</strong>
                                 </span>
                                 @enderror
-                                @if (session('oauth_error'))
-                                {{ session('oauth_error') }}
-                                @endif
                             </div>
                         </div>
 
@@ -41,6 +38,12 @@
                                 @enderror
                             </div>
                         </div>
+                        @if (session('oauth_error'))
+                        {{ session('oauth_error') }}
+                        @endif
+
+                        <a href="/auth/twitter">ログイン</a>
+                        <a href="/auth/twitter/logout">ログアウト</a>
 
                         <div class="form-group row">
                             <div class="col-md-6 offset-md-4">
@@ -61,12 +64,20 @@
                                 </button>
 
                                 <a href="login/twitter">Sign in with Twitter</a>
-
+                                <a class="btn btn-block btn-social btn-twitter" href="login/twitter">
+                                    <span class="fa fa-twitter"></span> Sign in with Twitter
+                                </a>
                                 @if (Route::has('password.request'))
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
                                     {{ __('Forgot Your Password?') }}
                                 </a>
                                 @endif
+
+                                <div class="form-group row">
+                                    <label for="github" class="col-md-6 col-form-label text-md-right">
+                                        <a href="login/github">Login with GitHub</a>
+                                    </label>
+                                </div>
                             </div>
                         </div>
                     </form>

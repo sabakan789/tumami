@@ -33,7 +33,15 @@ return [
     'twitter' => [
         'client_id' => env('TWITTER_CLIENT_ID'),
         'client_secret' => env('TWITTER_CLIENT_SECRET'),
-        'redirect' => env('TWITTER_CLIENT_CALLBACK')
+        'redirect' => env('TWITTER_CLIENT_CALLBACK'),
+        'access_token' => env('TWITTER_ACCESS_TOKEN'),
+        'secret_token' => env('TWITTER_ACCESS_TOKEN_SECRET')
+    ],
+
+    'github' => [
+        'client_id' => env('GITHUB_CLIENT_ID'),
+        'client_secret' => env('GITHUB_CLIENT_SECRET'),
+        'redirect' => env('APP_URL'),
     ],
 
 ];
