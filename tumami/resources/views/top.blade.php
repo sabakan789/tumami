@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -14,7 +13,6 @@
             </div>
             @endif
             @else
-
             <!-- <div class="col-md-offset-4 col-md-4">
                 <a href="{{ action('Admin\ProfileController@show', ['user_id' => Auth::user()->id]) }}">マイページ</a>
             </div> -->
@@ -31,7 +29,7 @@
                 <a href="{{ action('Admin\TumamiController@index')}}">投稿一覧</a>
             </div>
             <div class="col-md-offset-4 col-md-4">
-                <a href="{{ action('MapController@index')}}">みんなの投稿</a>
+                <a href="{{ action('TumamiController@index')}}">みんなの投稿</a>
             </div>
             @endguest
         </div>

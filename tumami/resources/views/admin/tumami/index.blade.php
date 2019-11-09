@@ -1,6 +1,5 @@
 @extends('layouts.admin')
 @section('title', 'みんなのつまみ')
-
 @section('content')
 <div class="container">
     <h2>つまみ一覧</h2>

@@ -12,10 +12,6 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/', function () {
     return view('top');
 });
 
@@ -23,7 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/map', 'MapController@index');
-
+Route::get('tumami/index', 'TumamiController@index');
 
 Route::group(['prefix' => 'admin'], function () {
     Route::get('profile/create', 'Admin\ProfileController@add')->middleware('auth');
@@ -43,15 +39,6 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('tumami/delete', 'Admin\TumamiController@delete')->middleware('auth');
 });
 
-// Route::get('/', 'TumamiController@index');
-// Route::get('/login/{provider}', 'Auth\LoginController@redirectToProvider');
-// // Route::get('login/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
-// Route::get('/home', 'Auth\LoginController@handleProviderCallback');
-
-
-// ログインURL
 Route::get('auth/twitter', 'Auth\TwitterController@redirectToProvider');
-// コールバックURL
 Route::get('/home', 'Auth\TwitterController@handleProviderCallback');
-// ログアウトURL
 Route::get('auth/twitter/logout', 'Auth\TwitterController@logout');

@@ -1,6 +1,5 @@
 @extends('layouts.admin')
 @section('title', 'プロフィールの編集')
-
 @section('content')
 <div class="container">
     <div class="row">

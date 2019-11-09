@@ -18,7 +18,7 @@ body {
                 width: 100%;
             }
         }
-        .tumaminame {
+        .title {
             width: 100%;
             position: absolute;
             bottom: 0;
@@ -29,7 +29,7 @@ body {
                 font-size: 1.2em;
             }
         }
-        .introduction {
+        .body {
             font-size: 0.8em;
         }
     }
@@ -41,11 +41,11 @@ body {
             font-size: 0.6em;
             color: #999999;
         }
-        .tumami_name {
+        .title {
             font-size: 1.2em;
             font-weight: bold;
         }
-        .introduction {
+        .body {
             font-size: 0.8em;
         }
         .image {

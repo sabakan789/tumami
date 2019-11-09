@@ -1,6 +1,5 @@
 @extends('layouts.admin')
 @section('title', 'タスク管理')
-
 @section('content')
 <div class="container">
     <div class="row">
@@ -25,7 +24,6 @@
         </div>
     </div>
 </div>
-
 @if (count($tasks) > 0)
 <div class="container">
     <div class="row">

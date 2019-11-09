@@ -1,6 +1,5 @@
 @extends('layouts.admin')
 @section('title', 'つまみ編集')
-
 @section('content')
 <div class="container">
     <div class="row">
