@@ -58,15 +58,15 @@ class tumamiController extends Controller
         $tumami = Tumami::find($request->id);
         // 送信されてきたフォームデータを格納する
         $tumami_form = $request->all();
-        // if (isset($tumami_form['tumami_image'])) {
-        //     $path = $request->file('tumami_image')->store('public/tumami_image');
-        //     $tumami->image_path = basename($path);
-        //     unset($tumami_form['tumami_image']);
-        // } elseif (0 == strcmp($request->remove, 'tumami_image')) {
-        //     $tumami->video = null;
-        // }
-        // unset($tumai_form['_token']);
-        // unset($tumai_form['remove']);
+        if (isset($tumami_form['tumami_image'])) {
+            $path = $request->file('tumami_image')->store('public/tumami_image');
+            $tumami->image_path = basename($path);
+            unset($tumami_form['tumami_image']);
+        } elseif (0 == strcmp($request->remove, 'tumami_image')) {
+            $tumami->video = null;
+        }
+        unset($tumami_form['_token']);
+        unset($tumami_form['remove']);
 
         // 該当するデータを上書きして保存する
 

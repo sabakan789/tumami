@@ -23,17 +23,30 @@
                 <div class="form-group row">
                     <label class="col-md-2" for="body">自己紹介</label>
                     <div class="col-md-10">
-                        <textarea class="form-control" name="profile" rows="10">{{ old('introduction') }}</textarea>
+                        <textarea class="form-control" name="profile" rows="10">{{ old('profile') }}</textarea>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label class="col-md-2" for="title">プロフィール画像</label>
+                    <label class="col-md-2" for="userimage_path">プロフィール画像</label>
                     <div class="col-md-10">
-                        <input type="file" class="form-control-file" name="image">
+                        <input type="file" class="form-control-file" name="userimage_path">
+                        <div class="form-text text-info">
+                            設定中: {{ $tumami_form->tumami_image_path }}
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="checkbox" class="form-check-input" name="remove" value="true">画像を削除
+                            </label>
+                        </div>
                     </div>
                 </div>
-                {{ csrf_field() }}
-                <input type="submit" class="btn btn-primary" value="登録">
+                <div class="form-group row">
+                    <div class="col-md-10">
+                        <input type="hidden" name="id" value="{{ $profile_form->id }}">
+                        {{ csrf_field() }}
+                        <input type="submit" class="btn btn-primary" value="更新">
+                    </div>
+                </div>
             </form>
         </div>
     </div>
