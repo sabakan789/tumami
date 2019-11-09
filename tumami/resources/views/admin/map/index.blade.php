@@ -23,9 +23,10 @@
     <div id="map" style="height: 500px; width: 80%; margin: 2rem auto 0;"></div>
     <!-- jqueryの読み込む -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- google map api -->
-    <script src="https://maps.googleapis.com/maps/api/js?key="></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZ5DuAqJJyOftffTfKKrq735qZNAJKpmM&callback=initMap"></script>
     <!-- js -->
+    <link href="{{ mix('css/admin.css') }}" rel="stylesheet">
+
     <script type="text/javascript">
         var map = new google.maps.Map(document.getElementById('map'), {
             center: {
@@ -35,6 +36,7 @@
             zoom: 8 //地図のズームを設定
         });
     </script>
+    <a href="/">トップに戻る</a>
 </body>
 
 </html>

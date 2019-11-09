@@ -24,9 +24,8 @@ class TwitterController extends Controller
             $twitterUser = \Socialite::driver('twitter')->user();
             // $twitterUser = \Socialite::driver('twitter')->userFromTokenAndSecret(env('TWITTER_ACCESS_TOKEN'), env('TWITTER_ACCESS_TOKEN_SECRET'));
         } catch (\Exception $e) {
-            return redirect('auth/twitter');
-            // return redirect('/login');
-
+            // return redirect('auth/twitter');
+            return redirect('/login');
         }
 
         // // 各自ログイン処理
@@ -46,20 +45,19 @@ class TwitterController extends Controller
             ], [
                 'name' => $twitterUser->getName()
             ]));
-
-            return redirect('/home');
-        } else {
+            return redirect('/');
+        }else {
             return redirect('/login')->with('oauth_error', 'メールアドレスが取得できませんでした');
         }
     }
 
 
-    // ログアウト
-    public function logout(Request $request)
-    {
-        // 各自ログアウト処理
-        // 例
-        // Auth::logout();
-        return redirect('/');
-    }
+    // // ログアウト
+    // public function logout(Request $request)
+    // {
+    //     // 各自ログアウト処理
+    //     // 例
+    //     // Auth::logout();
+    //     return redirect('/');
+    // }
 }

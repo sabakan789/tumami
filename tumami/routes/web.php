@@ -45,7 +45,9 @@ Route::group(['prefix' => 'admin'], function () {
 
 // Route::get('/', 'TumamiController@index');
 // Route::get('/login/{provider}', 'Auth\LoginController@redirectToProvider');
-// Route::get('login/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
+// // Route::get('login/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
+// Route::get('/home', 'Auth\LoginController@handleProviderCallback');
+
 
 // ログインURL
 Route::get('auth/twitter', 'Auth\TwitterController@redirectToProvider');
